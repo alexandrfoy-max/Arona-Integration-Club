@@ -134,52 +134,7 @@
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
         }
 
-        /* Events Sidebar */
-        .events-sidebar {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            border-radius: 16px;
-            padding: 35px;
-            width: 350px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-        }
-
-        .events-sidebar h2 {
-            font-size: 24px;
-            font-weight: 600;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-
-        .event-item {
-            padding: 18px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-            transition: transform 0.3s ease;
-        }
-
-        .event-item:hover {
-            transform: translateX(5px);
-        }
-
-        .event-item:last-child {
-            border-bottom: none;
-        }
-
-        .event-date {
-            font-weight: 600;
-            font-size: 16px;
-            margin-bottom: 5px;
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        .event-title {
-            font-weight: 400;
-            font-size: 16px;
-            opacity: 0.9;
-        }
-
-        /* Additional Sections */
+        /* Mission Section */
         .mission-section {
             background: rgba(255, 255, 255, 0.08);
             backdrop-filter: blur(15px);
@@ -202,6 +157,175 @@
             opacity: 0.9;
             max-width: 800px;
             margin: 0 auto;
+        }
+
+        /* Events Section */
+        .events-section {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 16px;
+            padding: 50px;
+            margin: 60px 0;
+        }
+
+        .events-section h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .event-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            padding: 25px;
+            transition: transform 0.3s ease;
+        }
+
+        .event-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .event-date {
+            font-weight: 600;
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .event-title {
+            font-weight: 500;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .event-description {
+            font-size: 14px;
+            opacity: 0.8;
+            line-height: 1.5;
+        }
+
+        /* Membership Section */
+        .membership-section {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 16px;
+            padding: 50px;
+            margin: 60px 0;
+            text-align: center;
+        }
+
+        .membership-section h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .membership-section p {
+            font-size: 18px;
+            line-height: 1.7;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 16px;
+            padding: 50px;
+            margin: 60px 0;
+        }
+
+        .contact-section h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateX(5px);
+        }
+
+        .contact-icon {
+            font-size: 24px;
+            width: 40px;
+            text-align: center;
+        }
+
+        .contact-details h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .contact-details p {
+            opacity: 0.8;
+            font-size: 14px;
+        }
+
+        .contact-details a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .contact-details a:hover {
+            opacity: 0.8;
+        }
+
+        .map-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            overflow: hidden;
+            height: 400px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
 
         /* Footer */
@@ -227,9 +351,13 @@
                 margin-bottom: 20px;
             }
 
-            .events-sidebar {
-                width: 100%;
-                max-width: 500px;
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .map-container {
+                height: 300px;
             }
         }
 
@@ -247,16 +375,23 @@
                 font-size: 38px;
             }
 
-            .hero-content {
+            .hero-content,
+            .mission-section,
+            .events-section,
+            .membership-section,
+            .contact-section {
                 padding: 30px;
             }
 
-            .mission-section {
-                padding: 30px;
-            }
-
-            .mission-section h2 {
+            .mission-section h2,
+            .events-section h2,
+            .membership-section h2,
+            .contact-section h2 {
                 font-size: 28px;
+            }
+
+            .events-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -279,10 +414,6 @@
             .hero p {
                 font-size: 18px;
             }
-
-            .events-sidebar {
-                padding: 25px;
-            }
         }
     </style>
 </head>
@@ -297,9 +428,10 @@
                 <nav>
                     <ul>
                         <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Events</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="#mission">Our Mission</a></li>
+                        <li><a href="#events">Events</a></li>
+                        <li><a href="#membership">Become a Member</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </nav>
             </div>
@@ -310,7 +442,7 @@
             <div class="hero-content">
                 <h1>Welcome to Arona<br>Integration Club</h1>
                 <p>We help people feel at home on Tenerife through cultural exchange, language learning, and community building.</p>
-                <a href="#" class="cta-button">Become a Member</a>
+                <a href="#membership" class="cta-button">Become a Member</a>
             </div>
 
             <!-- Events Sidebar -->
@@ -336,9 +468,81 @@
         </section>
 
         <!-- Mission Section -->
-        <section class="mission-section">
+        <section id="mission" class="mission-section">
             <h2>Our Mission</h2>
             <p>We create a welcoming space where locals and newcomers can connect, share experiences, and build a stronger, more integrated community together through mutual understanding and respect. Through language workshops, cultural events, and community initiatives, Arona Integration Club helps people adapt, engage, and feel at home in Arona.</p>
+        </section>
+
+        <!-- Events Section -->
+        <section id="events" class="events-section">
+            <h2>Event Calendar</h2>
+            <div class="events-grid">
+                <div class="event-card">
+                    <div class="event-date">May 7</div>
+                    <div class="event-title">Guanche Art Workshop</div>
+                    <div class="event-description">Discover the ancient art of the Guanche people, the original inhabitants of Tenerife. Create traditional crafts and learn about Canarian heritage.</div>
+                </div>
+                <div class="event-card">
+                    <div class="event-date">May 12</div>
+                    <div class="event-title">Spanish for Beginners</div>
+                    <div class="event-description">Start your Spanish journey in a friendly, supportive environment. Perfect for absolute beginners wanting to connect with the local community.</div>
+                </div>
+                <div class="event-card">
+                    <div class="event-date">May 25</div>
+                    <div class="event-title">Canary Film Night</div>
+                    <div class="event-description">Watch and discuss films from the Canary Islands. A great opportunity to learn about local culture and practice your Spanish.</div>
+                </div>
+                <div class="event-card">
+                    <div class="event-date">June 2</div>
+                    <div class="event-title">Canarian Cooking Workshop</div>
+                    <div class="event-description">Learn to cook traditional Canarian dishes like papas arrugadas and mojo sauces. Taste the authentic flavors of Tenerife.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Membership Section -->
+        <section id="membership" class="membership-section">
+            <h2>Become a Member</h2>
+            <p>Join our growing community and enjoy exclusive access to all our events, workshops, and cultural activities. Meet new people, learn new skills, and become part of the Arona community.</p>
+            <a href="#contact" class="cta-button">Join Now</a>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <h2>Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-details">
+                            <h3>Email Us</h3>
+                            <p><a href="mailto:hello@aronaintegrationclub.com">hello@aronaintegrationclub.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <div class="contact-details">
+                            <h3>WhatsApp</h3>
+                            <p><a href="https://wa.me/34600000000">+34 600 000 000</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <h3>Visit Us</h3>
+                            <p>Calle Laderas del Mojón 27<br>Chayofa, Tenerife</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3510.919319562091!2d-16.73238842368713!3d28.10089651099283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc6a5cee9a3b5a49%3A0x5b4c7f5b0e9c5a5f!2sCalle%20Laderas%20del%20Moj%C3%B3n%2027%2C%2038627%20Chayofa%2C%20Santa%20Cruz%20de%20Tenerife%2C%20Spain!5e0!3m2!1sen!2ses!4v1700000000000!5m2!1sen!2ses" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
         </section>
 
         <!-- Footer -->
