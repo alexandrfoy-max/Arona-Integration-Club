@@ -16,7 +16,9 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url('banner.jpg');
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), 
+                url('banner.jpg') fixed;
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -45,6 +47,11 @@
             font-size: 24px;
             font-weight: 600;
             letter-spacing: 1px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .logo span {
@@ -62,11 +69,14 @@
             text-decoration: none;
             font-weight: 400;
             font-size: 16px;
-            transition: opacity 0.3s;
+            transition: all 0.3s;
+            padding: 8px 16px;
+            border-radius: 6px;
         }
 
         nav a:hover {
-            opacity: 0.8;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
         }
 
         /* Hero Section */
@@ -74,17 +84,23 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            min-height: 70vh;
+            min-height: 80vh;
             padding: 60px 0;
         }
 
         .hero-content {
             flex: 1;
             max-width: 600px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            padding: 50px;
+            margin-right: 40px;
         }
 
         .hero h1 {
-            font-size: 48px;
+            font-size: 52px;
             font-weight: 600;
             line-height: 1.2;
             margin-bottom: 20px;
@@ -100,12 +116,12 @@
 
         .cta-button {
             display: inline-block;
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             color: white;
-            padding: 15px 40px;
-            border-radius: 8px;
+            padding: 16px 45px;
+            border-radius: 10px;
             text-decoration: none;
             font-weight: 500;
             font-size: 16px;
@@ -113,29 +129,37 @@
         }
 
         .cta-button:hover {
-            background: rgba(255, 255, 255, 0.25);
-            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
         }
 
         /* Events Sidebar */
         .events-sidebar {
             background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 12px;
-            padding: 30px;
-            width: 320px;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 16px;
+            padding: 35px;
+            width: 350px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
         }
 
         .events-sidebar h2 {
-            font-size: 22px;
+            font-size: 24px;
             font-weight: 600;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
+            text-align: center;
         }
 
         .event-item {
-            padding: 15px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 18px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .event-item:hover {
+            transform: translateX(5px);
         }
 
         .event-item:last-child {
@@ -146,6 +170,7 @@
             font-weight: 600;
             font-size: 16px;
             margin-bottom: 5px;
+            color: rgba(255, 255, 255, 0.9);
         }
 
         .event-title {
@@ -154,7 +179,60 @@
             opacity: 0.9;
         }
 
+        /* Additional Sections */
+        .mission-section {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 16px;
+            padding: 50px;
+            margin: 60px 0;
+            text-align: center;
+        }
+
+        .mission-section h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .mission-section p {
+            font-size: 18px;
+            line-height: 1.7;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 30px 0;
+            margin-top: 60px;
+            text-align: center;
+        }
+
         /* Mobile Responsive */
+        @media (max-width: 968px) {
+            .hero {
+                flex-direction: column;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .hero-content {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .events-sidebar {
+                width: 100%;
+                max-width: 500px;
+            }
+        }
+
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
@@ -162,30 +240,36 @@
             }
 
             nav ul {
-                gap: 25px;
-            }
-
-            .hero {
-                flex-direction: column;
-                text-align: center;
-                gap: 40px;
+                gap: 20px;
             }
 
             .hero h1 {
-                font-size: 36px;
+                font-size: 38px;
             }
 
-            .events-sidebar {
-                width: 100%;
-                max-width: 400px;
+            .hero-content {
+                padding: 30px;
+            }
+
+            .mission-section {
+                padding: 30px;
+            }
+
+            .mission-section h2 {
+                font-size: 28px;
             }
         }
 
         @media (max-width: 480px) {
             nav ul {
-                gap: 15px;
+                gap: 10px;
                 flex-wrap: wrap;
                 justify-content: center;
+            }
+
+            nav a {
+                padding: 6px 12px;
+                font-size: 14px;
             }
 
             .hero h1 {
@@ -194,6 +278,10 @@
 
             .hero p {
                 font-size: 18px;
+            }
+
+            .events-sidebar {
+                padding: 25px;
             }
         }
     </style>
@@ -211,6 +299,7 @@
                         <li><a href="#">Home</a></li>
                         <li><a href="#">About</a></li>
                         <li><a href="#">Events</a></li>
+                        <li><a href="#">Contact</a></li>
                     </ul>
                 </nav>
             </div>
@@ -220,7 +309,7 @@
         <section class="hero">
             <div class="hero-content">
                 <h1>Welcome to Arona<br>Integration Club</h1>
-                <p>We help people feel at home on Tenerife</p>
+                <p>We help people feel at home on Tenerife through cultural exchange, language learning, and community building.</p>
                 <a href="#" class="cta-button">Become a Member</a>
             </div>
 
@@ -239,8 +328,23 @@
                     <div class="event-date">May 25</div>
                     <div class="event-title">Cultural Festival</div>
                 </div>
+                <div class="event-item">
+                    <div class="event-date">June 2</div>
+                    <div class="event-title">Canarian Cooking Workshop</div>
+                </div>
             </aside>
         </section>
+
+        <!-- Mission Section -->
+        <section class="mission-section">
+            <h2>Building Bridges Between Cultures</h2>
+            <p>We create a welcoming space where locals and newcomers can connect, share experiences, and build a stronger, more integrated community together through mutual understanding and respect.</p>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2024 Arona Integration Club. All rights reserved.</p>
+        </footer>
     </div>
 </body>
 </html>
