@@ -148,6 +148,21 @@
     .btn-secondary:hover {
       background: rgba(255,255,255,0.25);
     }
+    .btn-wa {
+      background: #25D366;
+      border-radius: 60px;
+      padding: 8px 20px;
+      font-weight: 600;
+      display: inline-block;
+      text-decoration: none;
+      color: white;
+      margin-top: 12px;
+      transition: 0.2s;
+    }
+    .btn-wa:hover {
+      background: #1da15f;
+      transform: scale(1.02);
+    }
 
     nav {
       display: flex;
@@ -202,77 +217,71 @@
       margin-top: 15px;
       border: 1px solid rgba(255,140,66,0.5);
     }
-    /* Новый блок: кликабельное расписание */
-    .schedule-week {
+
+    /* ========== КАЛЕНДАРЬ-СПИСОК ========== */
+    .schedule-list {
       display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
+      flex-direction: column;
+      gap: 20px;
       margin: 40px 0;
-      justify-content: center;
     }
-    .schedule-day {
-      background: rgba(0,0,0,0.6);
+    .schedule-item {
+      background: rgba(0,0,0,0.55);
       backdrop-filter: blur(12px);
       border-radius: 32px;
-      padding: 20px 16px;
-      flex: 1;
-      min-width: 140px;
-      text-align: center;
-      border: 1px solid rgba(255,140,66,0.5);
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-    .schedule-day:hover {
-      transform: translateY(-5px);
-      background: rgba(255,140,66,0.3);
-      border-color: #ffaa66;
-    }
-    .schedule-day strong {
-      font-size: 1.3rem;
-      display: block;
-      color: #ffbc6e;
-    }
-    .schedule-day .event-name {
-      font-size: 0.9rem;
-      margin-top: 8px;
-    }
-    .weekday-title {
-      font-size: 1rem;
-      font-weight: 600;
-    }
-    /* для скролла к карточке */
-    html {
-      scroll-behavior: smooth;
-    }
-    .week-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      margin: 40px 0;
-    }
-    .day-card {
-      background: rgba(0,0,0,0.5);
-      backdrop-filter: blur(8px);
-      border-radius: 32px;
-      padding: 18px;
-      flex: 1;
-      text-align: center;
+      padding: 24px 28px;
       border: 1px solid rgba(255,140,66,0.4);
+      transition: 0.2s;
     }
-    .how-steps {
+    .schedule-item:hover {
+      border-color: #ffaa66;
+      background: rgba(20,30,50,0.7);
+    }
+    .schedule-day-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #ffbc6e;
+      margin-bottom: 8px;
+    }
+    .schedule-event-name {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin: 8px 0;
+    }
+    .schedule-details {
       display: flex;
       flex-wrap: wrap;
-      gap: 24px;
-      margin-top: 40px;
+      gap: 20px;
+      margin: 12px 0;
+      font-size: 0.95rem;
     }
-    .step {
-      background: rgba(0,0,0,0.4);
-      backdrop-filter: blur(6px);
-      border-radius: 30px;
-      padding: 24px;
-      flex: 1;
-      text-align: center;
+    .schedule-details span {
+      background: rgba(255,255,255,0.1);
+      padding: 4px 12px;
+      border-radius: 60px;
     }
+    .limit {
+      color: #ffaa66;
+      font-weight: 500;
+    }
+    .btn-wa-small {
+      background: #25D366;
+      border-radius: 40px;
+      padding: 8px 18px;
+      display: inline-block;
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+      margin-top: 15px;
+    }
+    .btn-wa-small:hover {
+      background: #1da15f;
+    }
+
+    .week-grid, .how-steps, .modal {
+      display: none;
+    }
+
     footer {
       text-align: center;
       padding: 60px 0 40px;
@@ -289,7 +298,8 @@
     @media (max-width: 780px) {
       .container { padding: 0 20px; }
       .section { padding: 70px 0; }
-      .schedule-day { min-width: 100px; padding: 12px; }
+      .schedule-day-title { font-size: 1.3rem; }
+      .schedule-event-name { font-size: 1.1rem; }
     }
     .quote {
       font-size: 1.5rem;
@@ -297,45 +307,6 @@
       padding-left: 30px;
       margin: 30px 0;
     }
-    /* модалка (та же) */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.7);
-      backdrop-filter: blur(5px);
-      z-index: 1000;
-      justify-content: center;
-      align-items: center;
-    }
-    .modal-content {
-      background: rgba(15,25,40,0.95);
-      backdrop-filter: blur(16px);
-      max-width: 500px;
-      width: 90%;
-      border-radius: 48px;
-      padding: 32px;
-      border: 1px solid rgba(255,255,255,0.3);
-      text-align: center;
-    }
-    .modal-content input, .modal-content select {
-      width: 100%;
-      margin: 12px 0;
-      padding: 14px;
-      border-radius: 60px;
-      border: none;
-      background: rgba(255,255,255,0.15);
-      color: white;
-      font-size: 1rem;
-    }
-    .close-modal {
-      float: right;
-      font-size: 28px;
-      cursor: pointer;
-    }
-    .whatsapp-btn { background: #25D366; }
-    .telegram-btn { background: #0088cc; }
   </style>
 </head>
 <body>
@@ -352,7 +323,6 @@
       <a href="#schedule">Schedule</a>
       <a href="#experiences">Experiences</a>
       <a href="#philosophy">Philosophy</a>
-      <a href="#contact" class="btn-secondary">Book now</a>
     </div>
   </nav>
 
@@ -365,7 +335,6 @@
       <p style="font-size: 1rem; margin-bottom: 30px;">👉 Escape.Meet.Enjoy.Repeat.</p>
       <div style="display: flex; gap: 20px; flex-wrap: wrap;">
         <a href="#schedule" class="btn-primary">View weekly schedule</a>
-        <a href="#contact" class="btn-secondary">Book now</a>
       </div>
     </div>
   </section>
@@ -376,150 +345,147 @@
     Tenerife Integration Club is about slowing down, connecting with nature, with basic things like coffee and food feeling Canarian "tranquillo". Experiencing the island through culture, creativity and shared moments.</p>
   </div>
 
-  <!-- ========== НОВОЕ КЛИКАБЕЛЬНОЕ РАСПИСАНИЕ НА НЕДЕЛЮ (первое, что видят) ========== -->
+  <!-- ========== КАЛЕНДАРЬ НА НЕДЕЛЮ (СПИСОК + КНОПКИ WHATSAPP) ========== -->
   <section id="schedule" class="section" style="padding-top: 40px;">
     <h2>📅 This week's schedule</h2>
-    <p style="margin-bottom: 20px;">Click on any day to see details 👇</p>
-    <div class="schedule-week">
-      <div class="schedule-day" data-target="monday-coffee">
-        <strong>Monday</strong>
-        <div class="event-name">☕ DIY Coffee Experience</div>
-        <div style="font-size:0.8rem;">10€</div>
+    <p style="margin-bottom: 20px;">Choose your experience and book your spot (max 10 people per event) 👇</p>
+    
+    <div class="schedule-list">
+      <!-- Понедельник: Coffee -->
+      <div class="schedule-item">
+        <div class="schedule-day-title">Monday</div>
+        <div class="schedule-event-name">☕ DIY Coffee Experience</div>
+        <div class="schedule-details">
+          <span>10€ / person</span>
+          <span>⏰ 10:00 – 12:00</span>
+          <span class="limit">👥 Only 10 spots</span>
+        </div>
+        <p>Hands‑on coffee with siphon & filter methods. Volcanic atmosphere.</p>
+        <a href="https://wa.me/34612345678?text=Hi!%20I%20want%20to%20book%20DIY%20Coffee%20Experience%20on%20Monday%20(10€).%20My%20name%20is:" class="btn-wa-small" target="_blank"><i class="fab fa-whatsapp"></i> Book via WhatsApp</a>
       </div>
-      <div class="schedule-day" data-target="tuesday-pottery">
-        <strong>Tuesday</strong>
-        <div class="event-name">🏺 Pottery Workshop</div>
-        <div style="font-size:0.8rem;">15€ / 10€ child</div>
+
+      <!-- Вторник: Pottery + Language (два события в один день, показываем отдельно) -->
+      <div class="schedule-item">
+        <div class="schedule-day-title">Tuesday (morning)</div>
+        <div class="schedule-event-name">🏺 Pottery Workshop</div>
+        <div class="schedule-details">
+          <span>15€ adult / 10€ child</span>
+          <span>⏰ 10:00 – 12:00</span>
+          <span class="limit">👥 Only 10 spots</span>
+        </div>
+        <p>Hands‑on pottery with volcanic clay. Family friendly. Max 10 participants.</p>
+        <a href="https://wa.me/34612345678?text=Hi!%20I%20want%20to%20book%20Pottery%20Workshop%20on%20Tuesday%20(15€%20adult%20/%2010€%20child).%20My%20name%20is:" class="btn-wa-small" target="_blank"><i class="fab fa-whatsapp"></i> Book via WhatsApp</a>
       </div>
-      <div class="schedule-day" data-target="tuesday-language">
-        <strong>Tuesday (also)</strong>
-        <div class="event-name">🗣 Spanish Language Café</div>
-        <div style="font-size:0.8rem;">Free / Donation</div>
+
+      <div class="schedule-item">
+        <div class="schedule-day-title">Tuesday (afternoon)</div>
+        <div class="schedule-event-name">🗣 Spanish Language Café</div>
+        <div class="schedule-details">
+          <span>Free / Donation</span>
+          <span>⏰ 16:00 – 18:00</span>
+          <span class="limit">👥 Only 10 spots</span>
+        </div>
+        <p>Relaxed language exchange. Meet locals and travelers.</p>
+        <a href="https://wa.me/34612345678?text=Hi!%20I%20want%20to%20join%20Spanish%20Language%20Café%20on%20Tuesday%20(Free).%20My%20name%20is:" class="btn-wa-small" target="_blank"><i class="fab fa-whatsapp"></i> Book via WhatsApp</a>
       </div>
-      <div class="schedule-day" data-target="wednesday-ecoart">
-        <strong>Wednesday</strong>
-        <div class="event-name">🎨🌿 Eco-Art Workshop</div>
-        <div style="font-size:0.8rem;">29€</div>
+
+      <!-- Среда: Eco-Art -->
+      <div class="schedule-item">
+        <div class="schedule-day-title">Wednesday</div>
+        <div class="schedule-event-name">🎨🌿 Eco-Art Workshop</div>
+        <div class="schedule-details">
+          <span>29€ / person</span>
+          <span>⏰ 10:00 – 13:00</span>
+          <span class="limit">👥 Only 10 spots</span>
+        </div>
+        <p>Create art from natural volcanic elements. Guided by resident artist Kristina Korbelainen (Finland).</p>
+        <a href="https://wa.me/34612345678?text=Hi!%20I%20want%20to%20book%20Eco-Art%20Workshop%20on%20Wednesday%20(29€).%20My%20name%20is:" class="btn-wa-small" target="_blank"><i class="fab fa-whatsapp"></i> Book via WhatsApp</a>
       </div>
-      <div class="schedule-day" data-target="thursday-sunset">
-        <strong>Thursday</strong>
-        <div class="event-name">🌄 Sunset Ritual</div>
-        <div style="font-size:0.8rem;">19€</div>
+
+      <!-- Четверг: Sunset Ritual -->
+      <div class="schedule-item">
+        <div class="schedule-day-title">Thursday</div>
+        <div class="schedule-event-name">🌄 Sunset Ritual Experience</div>
+        <div class="schedule-details">
+          <span>19€ / person</span>
+          <span>⏰ 17:30 – 20:00</span>
+          <span class="limit">👥 Only 10 spots</span>
+        </div>
+        <p>Tea ceremony on a volcano crater, panoramic views, slow sunset gathering.</p>
+        <a href="https://wa.me/34612345678?text=Hi!%20I%20want%20to%20book%20Sunset%20Ritual%20on%20Thursday%20(19€).%20My%20name%20is:" class="btn-wa-small" target="_blank"><i class="fab fa-whatsapp"></i> Book via WhatsApp</a>
       </div>
-      <div class="schedule-day" data-target="sunday-arttaste">
-        <strong>Sunday</strong>
-        <div class="event-name">🎨🍷 Art & Taste (Flagship)</div>
-        <div style="font-size:0.8rem;">39€</div>
+
+      <!-- Пятница: Coffee (добавим по желанию, хотя в расписании указано Mon-Fri) -->
+      <div class="schedule-item">
+        <div class="schedule-day-title">Friday</div>
+        <div class="schedule-event-name">☕ DIY Coffee Experience</div>
+        <div class="schedule-details">
+          <span>10€ / person</span>
+          <span>⏰ 10:00 – 12:00</span>
+          <span class="limit">👥 Only 10 spots</span>
+        </div>
+        <p>Another chance to enjoy coffee brewing in volcanic landscape.</p>
+        <a href="https://wa.me/34612345678?text=Hi!%20I%20want%20to%20book%20DIY%20Coffee%20Experience%20on%20Friday%20(10€).%20My%20name%20is:" class="btn-wa-small" target="_blank"><i class="fab fa-whatsapp"></i> Book via WhatsApp</a>
+      </div>
+
+      <!-- Воскресенье: Art & Taste (флагман) -->
+      <div class="schedule-item">
+        <div class="schedule-day-title">Sunday</div>
+        <div class="schedule-event-name">🎨🍷 Art & Taste (Flagship)</div>
+        <div class="schedule-details">
+          <span>39€ / person | 70€ / 2 persons</span>
+          <span>⏰ 18:00 – 21:00</span>
+          <span class="limit">👥 Only 10 spots</span>
+        </div>
+        <p>Curated evening of art creation, local food & drinks, music and community.</p>
+        <a href="https://wa.me/34612345678?text=Hi!%20I%20want%20to%20book%20Art%20&%20Taste%20on%20Sunday%20(39€%20or%2070€%20pair).%20My%20name%20is:" class="btn-wa-small" target="_blank"><i class="fab fa-whatsapp"></i> Book via WhatsApp</a>
       </div>
     </div>
-    <p style="text-align: center; font-size: 0.9rem; margin-top: 20px;">* Coffee also available on Wednesday morning on request</p>
+    <p style="text-align: center; margin-top: 20px; font-size: 0.85rem;">* Coffee also available on Wednesday morning on request — <a href="https://wa.me/34612345678?text=Hi!%20I'm%20interested%20in%20Wednesday%20morning%20coffee" target="_blank" style="color:#ffaa66;">ask via WhatsApp</a></p>
   </section>
 
-  <!-- ========== ПОЛНЫЕ КАРТОЧКИ ОПЫТОВ (с добавленной Pottery) ========== -->
+  <!-- ========== ПОДРОБНЫЕ КАРТОЧКИ ВСЕХ ОПЫТОВ (без дублирования бронирования, просто описания) ========== -->
   <section id="experiences" class="section">
     <h2>OUR EXPERIENCES</h2>
     <div class="grid-2">
-      <!-- Coffee -->
-      <div id="monday-coffee" class="glass-card exp-card">
+      <div class="glass-card exp-card">
         <i class="fas fa-mug-hot" style="font-size: 2.5rem; margin-bottom: 20px;"></i>
         <h3>☕ DIY Coffee Experience</h3>
         <div class="price">10€ / person</div>
-        <p>A hands-on coffee experience using siphon, filter brewing and other methods. Learn, taste and explore how can you affect your coffee, enjoying calm volcanic desert atmosphere.</p>
-        <ul style="margin: 15px 0 0 20px;">
-          <li>siphon brewing</li>
-          <li>filter coffee methods</li>
-          <li>tasting & comparison</li>
-          <li>volcanic atmosphere</li>
-        </ul>
-        <p style="margin-top: 20px;"><em>👉 Monday, Tuesday, Thursday, Friday (and Wednesday morning on request)</em></p>
+        <p>Learn siphon & filter brewing, tasting, volcanic atmosphere. Available Monday, Tuesday, Thursday, Friday (and Wednesday on request).</p>
       </div>
-      <!-- Pottery Workshop (НОВЫЙ) -->
-      <div id="tuesday-pottery" class="glass-card exp-card">
+      <div class="glass-card exp-card">
         <i class="fas fa-paint-brush" style="font-size: 2.5rem; margin-bottom: 20px;"></i>
         <h3>🏺 Pottery Workshop</h3>
         <div class="price">15€ adult | 10€ child</div>
-        <p>Hands-on pottery class for adults and kids. Create your own piece with volcanic clay. Group up to 10 people — cozy and personal.</p>
-        <ul style="margin: 15px 0 0 20px;">
-          <li>guided by professional ceramist</li>
-          <li>all materials included</li>
-          <li>take your creation home</li>
-          <li>family friendly</li>
-        </ul>
-        <p style="margin-top: 20px;"><em>👉 Every Tuesday — adults & children welcome</em></p>
+        <p>Tuesday mornings. Small group (max 10). Create your own pottery with volcanic clay.</p>
       </div>
-      <!-- Spanish Language Café -->
-      <div id="tuesday-language" class="glass-card exp-card">
+      <div class="glass-card exp-card">
         <i class="fas fa-language" style="font-size: 2.5rem; margin-bottom: 20px;"></i>
         <h3>🗣 Spanish Language Café</h3>
         <div class="price">Free / Donation</div>
-        <p>A relaxed language exchange for travelers, expats and locals. Practice Spanish in a natural, friendly environment and meet new people.</p>
-        <ul style="margin: 15px 0 0 20px;">
-          <li>informal conversations</li>
-          <li>multicultural environment</li>
-          <li>community building</li>
-          <li>no pressure, no rules</li>
-        </ul>
-        <p style="margin-top: 20px;"><em>👉 Every Tuesday (different time slot than Pottery)</em></p>
+        <p>Tuesday afternoons. Informal exchange, multicultural environment, no pressure.</p>
       </div>
-      <!-- Eco-Art Workshop -->
-      <div id="wednesday-ecoart" class="glass-card exp-card">
+      <div class="glass-card exp-card">
         <i class="fas fa-leaf" style="font-size: 2.5rem; margin-bottom: 20px;"></i>
         <h3>🎨🌿 Eco-Art Workshop</h3>
         <div class="price">29€ / person</div>
-        <p>Create art using natural elements from the volcanic landscape. A mindful, eco-conscious workshop connecting creativity with nature.</p>
-        <ul style="margin: 15px 0 0 20px;">
-          <li>natural pigments & volcanic materials</li>
-          <li>guided by resident artist</li>
-          <li>sustainable art techniques</li>
-          <li>take your unique piece home</li>
-        </ul>
-        <div class="artist-badge">
-          <i class="fas fa-paintbrush"></i> Residing artist: Kristina Korbelainen, Finland
-        </div>
-        <p style="margin-top: 20px;"><em>👉 Wednesday weekly — deep creative immersion</em></p>
+        <p>Wednesday. Natural pigments & volcanic materials. Resident artist Kristina Korbelainen, Finland.</p>
+        <div class="artist-badge"><i class="fas fa-paintbrush"></i> Kristina Korbelainen, Finland</div>
       </div>
-      <!-- Sunset Ritual -->
-      <div id="thursday-sunset" class="glass-card exp-card">
+      <div class="glass-card exp-card">
         <i class="fas fa-sun" style="font-size: 2.5rem; margin-bottom: 20px;"></i>
         <h3>🌄 Sunset Ritual Experience</h3>
         <div class="price">19€ / person</div>
-        <p>A unique sunset gathering on a volcanic landscape. Includes:</p>
-        <ul style="margin: 15px 0 0 20px;">
-          <li>tea ceremony on the crater of a volcano</li>
-          <li>panoramic views over Los Cristianos, Las Américas, Adeje and La Gomera</li>
-          <li>slow social sunset experience</li>
-          <li>photography & shared moment</li>
-        </ul>
-        <p style="margin-top: 20px;"><em>👉 Thursday — not a tour, a ritual experience</em></p>
+        <p>Thursday. Tea ceremony on volcano crater, panoramic views, slow sunset.</p>
       </div>
-      <!-- Art & Taste (Flagship) -->
-      <div id="sunday-arttaste" class="glass-card exp-card">
+      <div class="glass-card exp-card">
         <i class="fas fa-palette" style="font-size: 2.5rem; margin-bottom: 20px;"></i>
         <h3>🎨🍷 Art & Taste</h3>
         <div class="price">39€ / person | 70€ / 2 persons</div>
-        <p>The signature weekly experience of Tenerife Integration Club. A curated cultural evening combining:</p>
-        <ul style="margin: 15px 0 0 20px;">
-          <li>art creation</li>
-          <li>local food & drinks</li>
-          <li>music & atmosphere</li>
-          <li>community gathering</li>
-        </ul>
-        <p style="margin-top: 20px;"><em>👉 Sunday — flagship experience of the week</em></p>
+        <p>Sunday flagship. Art creation, local food & drinks, music, community.</p>
       </div>
     </div>
-  </section>
-
-  <!-- (Опционально) Weekly Program в виде блока для справки -->
-  <section class="section">
-    <h2>🗓 Weekly Overview</h2>
-    <div class="week-grid">
-      <div class="day-card"><strong>Monday</strong><br>☕ DIY Coffee (10€)</div>
-      <div class="day-card"><strong>Tuesday</strong><br>🏺 Pottery (15/10€) & 🗣 Language Café (Free)</div>
-      <div class="day-card"><strong>Wednesday</strong><br>🎨🌿 Eco-Art (29€)</div>
-      <div class="day-card"><strong>Thursday</strong><br>🌄 Sunset Ritual (19€)</div>
-      <div class="day-card"><strong>Sunday</strong><br>🎨🍷 Art & Taste (39€)</div>
-    </div>
-    <p style="margin-top: 20px; text-align: center;">* Coffee also on Tue, Thu, Fri + Wed morning by request</p>
   </section>
 
   <!-- PHILOSOPHY -->
@@ -531,17 +497,6 @@
     </div>
   </section>
 
-  <!-- CTA + Book -->
-  <section id="contact" class="section" style="text-align: center;">
-    <h2>Book your experience</h2>
-    <p style="font-size: 1.2rem; max-width: 600px; margin: 25px auto;">Join one of our weekly cultural gatherings in Tenerife.</p>
-    <div style="display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin: 35px 0;">
-      <a href="#" class="btn-primary" id="openModalBtn">📖 Book Now</a>
-      <a href="#schedule" class="btn-secondary">📅 Weekly Schedule</a>
-    </div>
-    <p style="margin-top: 30px; font-size: 1.1rem;"><strong>“A weekly cultural experience system in Tenerife connecting people through coffee, language, art and sunset rituals.”</strong></p>
-  </section>
-
   <footer>
     <div class="social-icons">
       <a href="https://instagram.com/tenerifeintegrationclub" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -549,73 +504,17 @@
       <a href="https://wa.me/34612345678" target="_blank"><i class="fab fa-whatsapp"></i></a>
     </div>
     <p style="margin: 25px 0 15px;">Tenerife Integration Club — culture, art & volcanic rituals</p>
+    <p style="font-size: 0.8rem;">📞 For booking & questions — contact us via WhatsApp or Telegram</p>
   </footer>
 </div>
 
-<!-- Модалка с формой -->
-<div id="bookingModal" class="modal">
-  <div class="modal-content">
-    <span class="close-modal">&times;</span>
-    <h3 style="margin-bottom: 20px;">Book your experience</h3>
-    <form id="bookingForm">
-      <input type="text" placeholder="Your name" required>
-      <input type="email" placeholder="Email (optional)">
-      <input type="tel" placeholder="WhatsApp / Telegram number" required>
-      <select>
-        <option>DIY Coffee Experience (10€)</option>
-        <option>Pottery Workshop adult (15€)</option>
-        <option>Pottery Workshop child (10€)</option>
-        <option>Spanish Language Café (Free)</option>
-        <option>Eco-Art Workshop (29€) - Wednesday</option>
-        <option>Sunset Ritual (19€) - Thursday</option>
-        <option>Art & Taste (39€) - Sunday</option>
-      </select>
-      <button type="submit" class="btn-primary" style="width: 100%; margin-top: 10px;">Send request</button>
-    </form>
-    <p style="margin: 20px 0 10px;">or contact us directly:</p>
-    <a href="https://wa.me/34612345678?text=Hi!%20I%20want%20to%20book%20an%20experience" target="_blank" class="btn-primary whatsapp-btn" style="display: block; background:#25D366;">WhatsApp</a>
-    <a href="https://t.me/ticlub" target="_blank" class="btn-primary telegram-btn" style="display: block; background:#0088cc;">Telegram</a>
-  </div>
-</div>
-
 <script>
-  // Кликабельное расписание: скролл к карточке по id
-  document.querySelectorAll('.schedule-day').forEach(day => {
-    day.addEventListener('click', () => {
-      const targetId = day.getAttribute('data-target');
-      if (targetId) {
-        const targetEl = document.getElementById(targetId);
-        if (targetEl) {
-          targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          // небольшой эффект подсветки (опционально)
-          targetEl.style.transition = '0.3s';
-          targetEl.style.border = '2px solid #ffaa66';
-          setTimeout(() => { targetEl.style.border = ''; }, 1500);
-        }
-      }
-    });
-  });
-
-  // Модалка
-  const modal = document.getElementById('bookingModal');
-  const openBtn = document.getElementById('openModalBtn');
-  const closeSpan = document.querySelector('.close-modal');
-  openBtn.onclick = (e) => { e.preventDefault(); modal.style.display = 'flex'; };
-  closeSpan.onclick = () => { modal.style.display = 'none'; };
-  window.onclick = (e) => { if (e.target == modal) modal.style.display = 'none'; };
-  document.getElementById('bookingForm').onsubmit = (e) => {
-    e.preventDefault();
-    alert('✅ Thank you! We will contact you shortly.');
-    modal.style.display = 'none';
-    e.target.reset();
-  };
-  // плавная навигация
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       const target = this.getAttribute('href');
-      if (target === "#" || target === "") return;
+      if(target === "#" || target === "") return;
       const el = document.querySelector(target);
-      if (el && !this.closest('.modal')) {
+      if(el) {
         e.preventDefault();
         el.scrollIntoView({ behavior: 'smooth' });
       }
